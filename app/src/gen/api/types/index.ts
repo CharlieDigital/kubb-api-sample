@@ -1,0 +1,1 @@
+export type { GetPostsQueryParams, GetPosts200, GetPostsQueryResponse, GetPostsQuery } from './GetPosts.ts'

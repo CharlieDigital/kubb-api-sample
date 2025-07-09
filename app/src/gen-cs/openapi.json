@@ -1,0 +1,97 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "backend-cs | v1",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/posts": {
+      "get": {
+        "tags": [
+          "backend-cs"
+        ],
+        "description": "Gets a list of posts",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Post": {
+        "required": [
+          "id",
+          "title",
+          "content"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          }
+        }
+      },
+      "PostsResponse": {
+        "required": [
+          "data",
+          "nextPage"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Post"
+            }
+          },
+          "nextPage": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "backend-cs"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[csharp]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "csharpier.csharpier-vscode"
+  }
+}

@@ -1,0 +1,1 @@
+{"required":["data","nextPage"],"type":"object","properties":{"data":{"type":"array","items":{"required":["id","title","content"],"type":"object","properties":{"id":{"type":"string"},"title":{"type":"string"},"content":{"type":"string"}},"x-readme-ref-name":"Post"}},"nextPage":{"type":"integer","format":"int32","nullable":true}},"x-readme-ref-name":"PostsResponse"}

@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>backend_cs</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.ApiDescription.Server" Version="9.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Vernou.Swashbuckle.HttpResultsAdapter" Version="1.0.2" />
+  </ItemGroup>
+
+  <!--
+    This property group contains the directives for generating the
+    OpenAPI specification.
+  -->
+  <PropertyGroup>
+    <!-- The output directory (placed one level up in this case) -->
+    <OpenApiDocumentsDirectory>../app/src/gen-cs</OpenApiDocumentsDirectory>
+    <!-- The file name -->
+    <OpenApiGenerateDocumentsOptions>--file-name openapi</OpenApiGenerateDocumentsOptions>
+  </PropertyGroup>
+
+  <!-- This section is a set of post-build commands -->
+  <Target Name="GenerateSpec" AfterTargets="Build" Condition="$(Configuration)=='Gen' Or $(GEN)=='true'">
+    <Message Text="Generating OpenAPI schema file." Importance="high" />
+
+    <!-- Generate TS bindings for the web app -->
+    <Exec Command="pnpm generate-cs" WorkingDirectory="../app" />
+  </Target>
+
+</Project>
