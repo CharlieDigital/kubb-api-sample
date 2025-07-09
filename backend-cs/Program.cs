@@ -35,5 +35,3 @@ app.Run();
 record Post(string Id, string Title, string Content);
 
 record PostsResponse(IEnumerable<Post> Data, int? NextPage);
-
-record PostsRequest(int Page = 1, int PageSize = 10);
