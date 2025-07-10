@@ -14,7 +14,7 @@ export const getPostsSuspenseQueryKey = (params: GetPostsQueryParams) => [{ url:
 export type GetPostsSuspenseQueryKey = ReturnType<typeof getPostsSuspenseQueryKey>
 
 /**
- * @description Gets a list of posts
+ * @description Gets a list of posts with Seth
  * {@link /posts}
  */
 export async function getPostsSuspense(params: GetPostsQueryParams, config: Partial<RequestConfig> & { client?: typeof fetch } = {}) {
@@ -43,7 +43,7 @@ export function getPostsSuspenseQueryOptions(params: GetPostsQueryParams, config
 }
 
 /**
- * @description Gets a list of posts
+ * @description Gets a list of posts with Seth
  * {@link /posts}
  */
 export function useGetPostsSuspense<TData = GetPostsQueryResponse, TQueryKey extends QueryKey = GetPostsSuspenseQueryKey>(

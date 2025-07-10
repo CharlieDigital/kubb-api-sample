@@ -14,7 +14,7 @@ export const getPostsQueryKey = (params: GetPostsQueryParams) => [{ url: '/posts
 export type GetPostsQueryKey = ReturnType<typeof getPostsQueryKey>
 
 /**
- * @description Gets a list of posts
+ * @description Gets a list of posts with Seth
  * {@link /posts}
  */
 export async function getPosts(params: GetPostsQueryParams, config: Partial<RequestConfig> & { client?: typeof fetch } = {}) {
@@ -43,7 +43,7 @@ export function getPostsQueryOptions(params: GetPostsQueryParams, config: Partia
 }
 
 /**
- * @description Gets a list of posts
+ * @description Gets a list of posts with Seth
  * {@link /posts}
  */
 export function useGetPosts<TData = GetPostsQueryResponse, TQueryData = GetPostsQueryResponse, TQueryKey extends QueryKey = GetPostsQueryKey>(

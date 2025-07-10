@@ -28,7 +28,7 @@ app.MapGet(
             );
         }
     )
-    .WithDescription("Gets a list of posts");
+    .WithDescription("Gets a list of posts with Seth");
 
 app.Run();
 

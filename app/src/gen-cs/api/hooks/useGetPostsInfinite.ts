@@ -14,7 +14,7 @@ export const getPostsInfiniteQueryKey = (params: GetPostsQueryParams) => [{ url:
 export type GetPostsInfiniteQueryKey = ReturnType<typeof getPostsInfiniteQueryKey>
 
 /**
- * @description Gets a list of posts
+ * @description Gets a list of posts with Seth
  * {@link /posts}
  */
 export async function getPostsInfinite(params: GetPostsQueryParams, config: Partial<RequestConfig> & { client?: typeof fetch } = {}) {
@@ -50,7 +50,7 @@ export function getPostsInfiniteQueryOptions(params: GetPostsQueryParams, config
 }
 
 /**
- * @description Gets a list of posts
+ * @description Gets a list of posts with Seth
  * {@link /posts}
  */
 export function useGetPostsInfinite<

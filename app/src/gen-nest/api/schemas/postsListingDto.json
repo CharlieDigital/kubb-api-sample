@@ -1,0 +1,1 @@
+{"type":"object","properties":{"data":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"title":{"type":"string"},"content":{"type":"string"}},"required":["id","title","content"],"x-readme-ref-name":"PostDto"}},"nextPage":{"type":"number","nullable":true}},"required":["data","nextPage"],"x-readme-ref-name":"PostsListingDto"}

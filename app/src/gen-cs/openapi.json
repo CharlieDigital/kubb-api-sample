@@ -10,7 +10,7 @@
         "tags": [
           "backend-cs"
         ],
-        "description": "Gets a list of posts",
+        "description": "Gets a list of posts with Seth",
         "parameters": [
           {
             "name": "page",
